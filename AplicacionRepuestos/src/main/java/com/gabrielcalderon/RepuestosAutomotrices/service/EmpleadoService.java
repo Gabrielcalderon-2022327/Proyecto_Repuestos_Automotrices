@@ -1,8 +1,11 @@
 package com.gabrielcalderon.RepuestosAutomotrices.service;
 
 import com.gabrielcalderon.RepuestosAutomotrices.model.Empleado;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
 public interface EmpleadoService {
     List<Empleado> getAllEmpleados();
     Empleado getEmpleadoById(Integer id);
