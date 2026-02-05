@@ -30,12 +30,17 @@ public class EmpleadoServiceImplements implements EmpleadoService{
     @Override
     public Empleado updateEmpleado(Integer id, Empleado empleado) {
         Empleado empleado1 = empleadoRepository.findById(id).orElse(null);
-        empleado1.setNombre_empleado(empleado.getNombre_empleado());
-        empleado1.setApellido_empleado(empleado.getApellido_empleado());
-        empleado1.setPuesto_empleado(empleado.getPuesto_empleado());
-        empleado1.setEmail_empleado(empleado.getEmail_empleado());
+        if (empleado1 != null) {
+            empleado1.setNombre_empleado(empleado.getNombre_empleado());
+            empleado1.setApellido_empleado(empleado.getApellido_empleado());
+            empleado1.setPuesto_empleado(empleado.getPuesto_empleado());
+            empleado1.setEmail_empleado(empleado.getEmail_empleado());
+        } else {
+            throw new IllegalArgumentException("Empleado no encontrado");
+        }
         return empleadoRepository.save(empleado1);
     }
+
     @Override
     public void deleateEmpleado(Integer id) {
         empleadoRepository.deleteById(id);
