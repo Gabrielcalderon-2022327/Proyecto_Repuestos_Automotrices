@@ -1,6 +1,8 @@
 package com.gabrielcalderon.RepuestosAutomotrices.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 //Clase anotada que representa una tabla en una base de datos relacional, actua como un puente entre la POO y SQL(JPA Hibernate), permitiendo mapear automaticamente atributos a columnas
@@ -12,15 +14,23 @@ public class Empleado {
     private Integer id_empleado;
 
     @Column(name = "nombre_empleado")
+    @NotBlank(message = "El nombre es un campo obligatorio")
+    @NotNull(message = "El nombre es un campo obligatorio")
     private String nombre_empleado;
 
     @Column(name = "apellido_empleado")
+    @NotBlank(message = "El apellido es un campo obligatorio")
+    @NotNull(message = "El apellido es un campo obligatorio")
     private String apellido_empleado;
 
     @Column(name = "puesto_empleado")
+    @NotBlank(message = "El puesto es un campo obligatorio")
+    @NotNull(message = "El puesto es un campo obligatorio")
     private String puesto_empleado;
 
     @Column(name = "email_empleado")
+    @NotBlank(message = "El email es un campo obligatorio")
+    @NotNull(message = "El email es un campo obligatorio")
     private String email_empleado;
 
 
