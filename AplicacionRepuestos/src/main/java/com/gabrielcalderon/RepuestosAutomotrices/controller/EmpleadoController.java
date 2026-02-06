@@ -56,7 +56,7 @@ public class EmpleadoController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteEmpleadoById(@PathVariable Integer id){
         try {
-            empleadoService.deleateEmpleado(id);
+            empleadoService.deleteEmpleado(id);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (IllegalArgumentException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
