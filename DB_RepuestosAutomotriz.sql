@@ -265,53 +265,57 @@ delimiter $$
 delimiter ;
 
 -- -- -----------------------------------------------------------------------------------INSERCION DE REGISTROS
-insert into Proveedores (nombre_proveedor, telefono_proveedor, direccion, email_proveedor) values
-	('Repuestos El Águila', 42123456, 'Zona 1, Ciudad', 'contacto@elaguila.com'),
-	('AutoPartes Central', 43112233, 'Zona 4, Ciudad', 'ventas@autopartescentral.com'),
-	('Motores del Norte', 44114455, 'Zona 7, Ciudad', 'info@motoresnorte.com'),
-	('Distribuidora La Rueda', 45223344, 'Zona 11, Ciudad', 'larueda@proveedores.com'),
-	('Frenos y Más', 46334455, 'Zona 9, Ciudad', 'frenosymas@gmail.com'),
-	('Autopartes Premium', 47445566, 'Zona 14, Ciudad', 'premium@autopartes.com'),
-	('Repuestos San José', 48556677, 'Zona 3, Ciudad', 'sanjose@repuestos.com'),
-	('Importadora Torque', 49667788, 'Zona 12, Ciudad', 'torque@importadora.com'),
-	('AutoMoto Supply', 40778899, 'Zona 10, Ciudad', 'ventas@automoto.com'),
-	('Partes Express', 41889900, 'Zona 5, Ciudad', 'express@partes.com');
+-- ----------------PROVEEDORES
+call sp_AgregarProveedores('Repuestos El Águila', 42123456, 'Zona 1, Ciudad', 'contacto@elaguila.com');
+call sp_AgregarProveedores('AutoPartes Central', 43112233, 'Zona 4, Ciudad', 'ventas@autopartescentral.com');
+call sp_AgregarProveedores('Motores del Norte', 44114455, 'Zona 7, Ciudad', 'info@motoresnorte.com');
+call sp_AgregarProveedores('Distribuidora La Rueda', 45223344, 'Zona 11, Ciudad', 'larueda@proveedores.com');
+call sp_AgregarProveedores('Frenos y Más', 46334455, 'Zona 9, Ciudad', 'frenosymas@gmail.com');
+call sp_AgregarProveedores('Autopartes Premium', 47445566, 'Zona 14, Ciudad', 'premium@autopartes.com');
+call sp_AgregarProveedores('Repuestos San José', 48556677, 'Zona 3, Ciudad', 'sanjose@repuestos.com');
+call sp_AgregarProveedores('Importadora Torque', 49667788, 'Zona 12, Ciudad', 'torque@importadora.com');
+call sp_AgregarProveedores('AutoMoto Supply', 40778899, 'Zona 10, Ciudad', 'ventas@automoto.com');
+call sp_AgregarProveedores('Partes Express', 41889900, 'Zona 5, Ciudad', 'express@partes.com');
 
-insert into Empleados (nombre_empleado, apellido_empleado, puesto_empleado, email_empleado) values
-	('Carlos', 'Méndez', 'Vendedor', 'carlos.mendez@empresa.com'),
-	('Ana', 'López', 'Vendedor', 'ana.lopez@empresa.com'),
-	('Luis', 'Ramírez', 'Cajero', 'luis.ramirez@empresa.com'),
-	('María', 'Gómez', 'Gerente', 'maria.gomez@empresa.com'),
-	('Pedro', 'Hernández', 'Vendedor', 'pedro.hernandez@empresa.com'),
-	('Sofía', 'Castillo', 'Cajero', 'sofia.castillo@empresa.com'),
-	('Jorge', 'Pérez', 'Supervisor', 'jorge.perez@empresa.com'),
-	('Daniela', 'Morales', 'Vendedor', 'daniela.morales@empresa.com'),
-	('Miguel', 'Rojas', 'Bodega', 'miguel.rojas@empresa.com'),
-	('Lucía', 'Flores', 'Administración', 'lucia.flores@empresa.com');
+-- ----------------EMPLEADOS
+call sp_AgregarEmpleados('Carlos', 'Méndez', 'Vendedor', 'carlos.mendez@empresa.com');
+call sp_AgregarEmpleados('Ana', 'López', 'Vendedor', 'ana.lopez@empresa.com');
+call sp_AgregarEmpleados('Luis', 'Ramírez', 'Cajero', 'luis.ramirez@empresa.com');
+call sp_AgregarEmpleados('María', 'Gómez', 'Gerente', 'maria.gomez@empresa.com');
+call sp_AgregarEmpleados('Pedro', 'Hernández', 'Vendedor', 'pedro.hernandez@empresa.com');
+call sp_AgregarEmpleados('Sofía', 'Castillo', 'Cajero', 'sofia.castillo@empresa.com');
+call sp_AgregarEmpleados('Jorge', 'Pérez', 'Supervisor', 'jorge.perez@empresa.com');
+call sp_AgregarEmpleados('Daniela', 'Morales', 'Vendedor', 'daniela.morales@empresa.com');
+call sp_AgregarEmpleados('Miguel', 'Rojas', 'Bodega', 'miguel.rojas@empresa.com');
+call sp_AgregarEmpleados('Lucía', 'Flores', 'Administración', 'lucia.flores@empresa.com');
 
-insert into Repuestos (nombre_repuesto, categoria_repuesto, precio_compra, precio_venta, id_proveedor) values
-	('Filtro de Aceite', 'Motor', 45.00, 75.00, 1),
-	('Pastillas de Freno', 'Frenos', 120.00, 180.00, 5),
-	('Bujías', 'Motor', 30.00, 55.00, 3),
-	('Amortiguador', 'Suspensión', 220.00, 320.00, 4),
-	('Radiador', 'Enfriamiento', 450.00, 650.00, 2),
-	('Batería 12V', 'Eléctrico', 380.00, 550.00, 6),
-	('Correa de Tiempo', 'Motor', 95.00, 150.00, 7),
-	('Disco de Freno', 'Frenos', 160.00, 240.00, 5),
-	('Alternador', 'Eléctrico', 520.00, 750.00, 8),
-	('Filtro de Aire', 'Motor', 35.00, 65.00, 9);
+-- ----------------RESPUESTOS
+call sp_AgregarRepuestos('Filtro de Aceite', 'Motor', 45.00, 75.00, 1);
+call sp_AgregarRepuestos('Pastillas de Freno', 'Frenos', 120.00, 180.00, 5);
+call sp_AgregarRepuestos('Bujías', 'Motor', 30.00, 55.00, 3);
+call sp_AgregarRepuestos('Amortiguador', 'Suspensión', 220.00, 320.00, 4);
+call sp_AgregarRepuestos('Radiador', 'Enfriamiento', 450.00, 650.00, 2);
+call sp_AgregarRepuestos('Batería 12V', 'Eléctrico', 380.00, 550.00, 6);
+call sp_AgregarRepuestos('Correa de Tiempo', 'Motor', 95.00, 150.00, 7);
+call sp_AgregarRepuestos('Disco de Freno', 'Frenos', 160.00, 240.00, 5);
+call sp_AgregarRepuestos('Alternador', 'Eléctrico', 520.00, 750.00, 8);
+call sp_AgregarRepuestos('Filtro de Aire', 'Motor', 35.00, 65.00, 9);
 
-insert into Ventas (fecha_venta, cantidad, total, id_empleado, id_repuesto) values
-	('2024-05-01', 2, 150.00, 1, 1),
-	('2024-05-02', 1, 180.00, 2, 2),
-	('2024-05-03', 4, 220.00, 3, 3),
-	('2024-05-04', 1, 320.00, 4, 4),
-	('2024-05-05', 1, 650.00, 5, 5),
-	('2024-05-06', 2, 1100.00, 6, 6),
-	('2024-05-07', 3, 450.00, 7, 7),
-	('2024-05-08', 2, 480.00, 8, 8),
-	('2024-05-09', 1, 750.00, 9, 9),
-	('2024-05-10', 5, 325.00, 10, 10);
+-- ----------------VENTAS
+call sp_AgregarVentas('2024-05-01', 2, 150.00, 1, 1);
+call sp_AgregarVentas('2024-05-02', 1, 180.00, 2, 2);
+call sp_AgregarVentas('2024-05-03', 4, 220.00, 3, 3);
+call sp_AgregarVentas('2024-05-04', 1, 320.00, 4, 4);
+call sp_AgregarVentas('2024-05-05', 1, 650.00, 5, 5);
+call sp_AgregarVentas('2024-05-06', 2, 1100.00, 6, 6);
+call sp_AgregarVentas('2024-05-07', 3, 450.00, 7, 7);
+call sp_AgregarVentas('2024-05-08', 2, 480.00, 8, 8);
+call sp_AgregarVentas('2024-05-09', 1, 750.00, 9, 9);
+call sp_AgregarVentas('2024-05-10', 5, 325.00, 10, 10);
+
+
+
+
 
 
 
