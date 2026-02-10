@@ -18,7 +18,6 @@ public class Proveedores {
     private String nombre_proveedor;
 
     @Column(name = "telefono_proveedor")
-    @NotBlank(message = "El telefono es un campo obligatorio")
     @NotNull(message = "El telefono es un campo obligatorio")
     private Integer telefono_proveedor;
 
