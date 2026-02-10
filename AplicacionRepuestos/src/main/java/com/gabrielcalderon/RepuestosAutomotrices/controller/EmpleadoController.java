@@ -1,6 +1,6 @@
 package com.gabrielcalderon.RepuestosAutomotrices.controller;
 
-import com.gabrielcalderon.RepuestosAutomotrices.model.Empleado;
+import com.gabrielcalderon.RepuestosAutomotrices.entity.Empleado;
 import com.gabrielcalderon.RepuestosAutomotrices.service.EmpleadoService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package com.gabrielcalderon.RepuestosAutomotrices.service;
 
-import com.gabrielcalderon.RepuestosAutomotrices.model.Empleado;
+import com.gabrielcalderon.RepuestosAutomotrices.entity.Empleado;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.gabrielcalderon.RepuestosAutomotrices.model;
+package com.gabrielcalderon.RepuestosAutomotrices.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
