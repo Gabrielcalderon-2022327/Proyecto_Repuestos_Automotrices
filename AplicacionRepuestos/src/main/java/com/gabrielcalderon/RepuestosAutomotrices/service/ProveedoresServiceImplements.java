@@ -2,9 +2,11 @@ package com.gabrielcalderon.RepuestosAutomotrices.service;
 
 import com.gabrielcalderon.RepuestosAutomotrices.entity.Proveedores;
 import com.gabrielcalderon.RepuestosAutomotrices.repository.ProveedoresRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ProveedoresServiceImplements implements ProveedoresService{
     private final ProveedoresRepository proveedoresRepository;
 
