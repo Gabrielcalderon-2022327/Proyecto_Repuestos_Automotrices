@@ -2,9 +2,11 @@ package com.gabrielcalderon.RepuestosAutomotrices.service;
 
 import com.gabrielcalderon.RepuestosAutomotrices.entity.Venta;
 import com.gabrielcalderon.RepuestosAutomotrices.repository.VentasRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class VentasServiceImplements implements VentaService{
     private final VentasRepository repository;
 
@@ -43,7 +45,7 @@ public class VentasServiceImplements implements VentaService{
             venta1.setTotal(venta.getTotal());
             venta.setId_repuesto(venta.getId_repuesto());
         }
-        return venta1;
+        return repository.save(venta1);
     }
 
     @Override
