@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "Ventas")
@@ -16,11 +16,10 @@ public class Venta {
 
     @Column(name = "fecha_venta")
     @NotNull(message = "La fecha de venta es un campo obligatorio")
-    @NotBlank(message = "La fecha de venta es un campo obligatorio")
-    private Date fecha_venta;
+    private LocalDate fecha_venta;
 
     @Column(name = "cantidad")
-    @NotNull(message = "La fecha de venta es un campo obligatorio")
+    @NotNull(message = "La cantidad de venta es un campo obligatorio")
     private Integer cantidad;
 
     @Column(name = "total")
@@ -42,10 +41,10 @@ public class Venta {
         this.id_venta = id_venta;
     }
 
-    public Date getFecha_venta() {
+    public LocalDate getFecha_venta() {
         return fecha_venta;
     }
-    public void setFecha_venta(Date fecha_venta) {
+    public void setFecha_venta(LocalDate fecha_venta) {
         this.fecha_venta = fecha_venta;
     }
 
