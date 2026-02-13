@@ -2,20 +2,24 @@ package com.gabrielcalderon.RepuestosAutomotrices.controller;
 
 import com.gabrielcalderon.RepuestosAutomotrices.entity.Repuesto;
 import com.gabrielcalderon.RepuestosAutomotrices.service.RepuestoService;
+import com.gabrielcalderon.RepuestosAutomotrices.service.RepuestoValidator;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/repuestos")
 public class RepuestoController {
     private final RepuestoService service;
+    private final RepuestoValidator validator;
 
-    public RepuestoController(RepuestoService service) {
+    public RepuestoController(RepuestoService service, RepuestoValidator validator) {
         this.service = service;
+        this.validator = validator;
     }
 
     @GetMapping
@@ -29,27 +33,29 @@ public class RepuestoController {
             Repuesto searchedRepuesto = service.getRepuestoByID(id);
             return new ResponseEntity<>(searchedRepuesto, HttpStatus.OK);
         }catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("Error", e.getMessage()));
         }
     }
 
     @PostMapping
     public ResponseEntity<Object> saveRepuesto(@Valid @RequestBody Repuesto repuesto){
         try {
+            validator.validar(repuesto);
             Repuesto savedRepuesto = service.saveRepuesto(repuesto);
             return new ResponseEntity<>(savedRepuesto, HttpStatus.CREATED);
         }catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("Error", e.getMessage()));
         }
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Object> updateRepuesto(@Valid @RequestBody Repuesto repuesto, @PathVariable Integer id){
         try{
+            validator.validar(repuesto);
             Repuesto updatedRepuesto = service.updateRepuesto(id, repuesto);
             return new ResponseEntity<>(updatedRepuesto, HttpStatus.OK);
         }catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("Error", e.getMessage()));
         }
     }
 
@@ -59,7 +65,7 @@ public class RepuestoController {
             service.deleteRepuesto(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.badRequest().body(Map.of("Error", e.getMessage()));
         }
     }
 
