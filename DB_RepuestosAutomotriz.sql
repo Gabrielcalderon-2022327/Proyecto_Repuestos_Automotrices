@@ -266,28 +266,28 @@ delimiter ;
 
 -- -- -----------------------------------------------------------------------------------INSERCION DE REGISTROS
 -- ----------------PROVEEDORES
-call sp_AgregarProveedores('Repuestos El Águila', 42123456, 'Zona 1, Ciudad', 'contacto@elaguila.com');
-call sp_AgregarProveedores('AutoPartes Central', 43112233, 'Zona 4, Ciudad', 'ventas@autopartescentral.com');
-call sp_AgregarProveedores('Motores del Norte', 44114455, 'Zona 7, Ciudad', 'info@motoresnorte.com');
-call sp_AgregarProveedores('Distribuidora La Rueda', 45223344, 'Zona 11, Ciudad', 'larueda@proveedores.com');
+call sp_AgregarProveedores('Repuestos El Águila', 42123456, 'Zona 1, Ciudad', 'contacto@gmail.com');
+call sp_AgregarProveedores('AutoPartes Central', 43112233, 'Zona 4, Ciudad', 'ventas@gmail.com');
+call sp_AgregarProveedores('Motores del Norte', 44114455, 'Zona 7, Ciudad', 'info@gmail.com');
+call sp_AgregarProveedores('Distribuidora La Rueda', 45223344, 'Zona 11, Ciudad', 'larueda@gmail.com');
 call sp_AgregarProveedores('Frenos y Más', 46334455, 'Zona 9, Ciudad', 'frenosymas@gmail.com');
-call sp_AgregarProveedores('Autopartes Premium', 47445566, 'Zona 14, Ciudad', 'premium@autopartes.com');
-call sp_AgregarProveedores('Repuestos San José', 48556677, 'Zona 3, Ciudad', 'sanjose@repuestos.com');
-call sp_AgregarProveedores('Importadora Torque', 49667788, 'Zona 12, Ciudad', 'torque@importadora.com');
-call sp_AgregarProveedores('AutoMoto Supply', 40778899, 'Zona 10, Ciudad', 'ventas@automoto.com');
-call sp_AgregarProveedores('Partes Express', 41889900, 'Zona 5, Ciudad', 'express@partes.com');
+call sp_AgregarProveedores('Autopartes Premium', 47445566, 'Zona 14, Ciudad', 'premium@outlook.com');
+call sp_AgregarProveedores('Repuestos San José', 48556677, 'Zona 3, Ciudad', 'sanjose@outlook.com');
+call sp_AgregarProveedores('Importadora Torque', 49667788, 'Zona 12, Ciudad', 'torque@outlook.com');
+call sp_AgregarProveedores('AutoMoto Supply', 40778899, 'Zona 10, Ciudad', 'ventas@yahoo.com');
+call sp_AgregarProveedores('Partes Express', 41889900, 'Zona 5, Ciudad', 'express@yahoo.com');
 
 -- ----------------EMPLEADOS
-call sp_AgregarEmpleados('Carlos', 'Méndez', 'Vendedor', 'carlos.mendez@empresa.com');
-call sp_AgregarEmpleados('Ana', 'López', 'Vendedor', 'ana.lopez@empresa.com');
-call sp_AgregarEmpleados('Luis', 'Ramírez', 'Cajero', 'luis.ramirez@empresa.com');
-call sp_AgregarEmpleados('María', 'Gómez', 'Gerente', 'maria.gomez@empresa.com');
-call sp_AgregarEmpleados('Pedro', 'Hernández', 'Vendedor', 'pedro.hernandez@empresa.com');
-call sp_AgregarEmpleados('Sofía', 'Castillo', 'Cajero', 'sofia.castillo@empresa.com');
-call sp_AgregarEmpleados('Jorge', 'Pérez', 'Supervisor', 'jorge.perez@empresa.com');
-call sp_AgregarEmpleados('Daniela', 'Morales', 'Vendedor', 'daniela.morales@empresa.com');
-call sp_AgregarEmpleados('Miguel', 'Rojas', 'Bodega', 'miguel.rojas@empresa.com');
-call sp_AgregarEmpleados('Lucía', 'Flores', 'Administración', 'lucia.flores@empresa.com');
+call sp_AgregarEmpleados('Carlos', 'Méndez', 'Vendedor', 'carlos.mendez@gmail.com');
+call sp_AgregarEmpleados('Ana', 'López', 'Vendedor', 'ana.lopez@gmail.com');
+call sp_AgregarEmpleados('Luis', 'Ramírez', 'Cajero', 'luis.ramirez@gmail.com');
+call sp_AgregarEmpleados('María', 'Gómez', 'Gerente', 'maria.gomez@gmail.com');
+call sp_AgregarEmpleados('Pedro', 'Hernández', 'Vendedor', 'pedro.hernandez@yahoo.com');
+call sp_AgregarEmpleados('Sofía', 'Castillo', 'Cajero', 'sofia.castillo@yahoo.com');
+call sp_AgregarEmpleados('Jorge', 'Pérez', 'Supervisor', 'jorge.perez@yahoo.com');
+call sp_AgregarEmpleados('Daniela', 'Morales', 'Vendedor', 'daniela.morales@outlook.com');
+call sp_AgregarEmpleados('Miguel', 'Rojas', 'Bodega', 'miguel.rojas@outlook.com');
+call sp_AgregarEmpleados('Lucía', 'Flores', 'Administración', 'lucia.flores@outlook.com');
 
 -- ----------------RESPUESTOS
 call sp_AgregarRepuestos('Filtro de Aceite', 'Motor', 45.00, 75.00, 1);
@@ -302,16 +302,16 @@ call sp_AgregarRepuestos('Alternador', 'Eléctrico', 520.00, 750.00, 8);
 call sp_AgregarRepuestos('Filtro de Aire', 'Motor', 35.00, 65.00, 9);
 
 -- ----------------VENTAS
-call sp_AgregarVentas('2024-05-01', 2, 150.00, 1, 1);
-call sp_AgregarVentas('2024-05-02', 1, 180.00, 2, 2);
-call sp_AgregarVentas('2024-05-03', 4, 220.00, 3, 3);
-call sp_AgregarVentas('2024-05-04', 1, 320.00, 4, 4);
-call sp_AgregarVentas('2024-05-05', 1, 650.00, 5, 5);
-call sp_AgregarVentas('2024-05-06', 2, 1100.00, 6, 6);
-call sp_AgregarVentas('2024-05-07', 3, 450.00, 7, 7);
-call sp_AgregarVentas('2024-05-08', 2, 480.00, 8, 8);
-call sp_AgregarVentas('2024-05-09', 1, 750.00, 9, 9);
-call sp_AgregarVentas('2024-05-10', 5, 325.00, 10, 10);
+call sp_AgregarVentas('2025-05-01', 2, 150.00, 1, 1);
+call sp_AgregarVentas('2025-05-02', 1, 180.00, 2, 2);
+call sp_AgregarVentas('2025-05-03', 4, 220.00, 3, 3);
+call sp_AgregarVentas('2025-05-04', 1, 320.00, 4, 4);
+call sp_AgregarVentas('2025-05-05', 1, 650.00, 5, 5);
+call sp_AgregarVentas('2025-05-06', 2, 1100.00, 6, 6);
+call sp_AgregarVentas('2025-05-07', 3, 450.00, 7, 7);
+call sp_AgregarVentas('2025-05-08', 2, 480.00, 8, 8);
+call sp_AgregarVentas('2025-05-09', 1, 750.00, 9, 9);
+call sp_AgregarVentas('2025-05-10', 5, 325.00, 10, 10);
 
 
 
