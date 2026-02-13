@@ -1,6 +1,7 @@
 package com.gabrielcalderon.RepuestosAutomotrices.service;
 
 import com.gabrielcalderon.RepuestosAutomotrices.entity.Repuesto;
+import com.gabrielcalderon.RepuestosAutomotrices.exception.ResourceNotFoundException;
 import com.gabrielcalderon.RepuestosAutomotrices.repository.RepuestoRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,7 @@ public class RepuestoServiceImplements implements RepuestoService{
     public Repuesto getRepuestoByID(Integer id) {
         Repuesto repuesto = repository.findById(id).orElse(null);
         if (repuesto == null) {
-            throw new IllegalArgumentException("Repuesto no encontrado");
+            throw new ResourceNotFoundException("Repuesto no encontrado");
         }
         return repository.findById(id).orElse(null);
     }
@@ -44,7 +45,7 @@ public class RepuestoServiceImplements implements RepuestoService{
             repuesto1.setPrecio_venta(repuesto.getPrecio_venta());
             repuesto1.setId_proveedor(repuesto.getId_proveedor());
         } else{
-            throw new IllegalArgumentException("Repuesto no encontrado");
+            throw new ResourceNotFoundException("Repuesto no encontrado");
         }
         return repository.save(repuesto1);
     }
@@ -53,7 +54,7 @@ public class RepuestoServiceImplements implements RepuestoService{
     public void deleteRepuesto(Integer id) {
         Repuesto repuesto = repository.findById(id).orElse(null);
         if (repuesto == null) {
-            throw new IllegalArgumentException("Repuesto no encontrado");
+            throw new ResourceNotFoundException("Repuesto no encontrado");
         }
         repository.deleteById(id);
 

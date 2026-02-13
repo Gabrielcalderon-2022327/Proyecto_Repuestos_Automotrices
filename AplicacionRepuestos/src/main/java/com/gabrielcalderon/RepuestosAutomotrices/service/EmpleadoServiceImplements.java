@@ -1,6 +1,7 @@
 package com.gabrielcalderon.RepuestosAutomotrices.service;
 
 import com.gabrielcalderon.RepuestosAutomotrices.entity.Empleado;
+import com.gabrielcalderon.RepuestosAutomotrices.exception.ResourceNotFoundException;
 import com.gabrielcalderon.RepuestosAutomotrices.repository.EmpleadoRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,7 @@ public class EmpleadoServiceImplements implements EmpleadoService{
     public Empleado getEmpleadoById(Integer id) {
         Empleado empleado = empleadoRepository.findById(id).orElse(null);
         if (empleado == null) {
-            throw new IllegalArgumentException("Empleado no encontrado");
+            throw new ResourceNotFoundException("Empleado no encontrado");
         }
         return empleadoRepository.findById(id).orElse(null);
     }
@@ -42,9 +43,8 @@ public class EmpleadoServiceImplements implements EmpleadoService{
             empleado1.setApellido_empleado(empleado.getApellido_empleado());
             empleado1.setPuesto_empleado(empleado.getPuesto_empleado());
             empleado1.setEmail_empleado(empleado.getEmail_empleado());
-
         } else {
-            throw new IllegalArgumentException("Empleado no encontrado");
+            throw new ResourceNotFoundException("Empleado no encontrado");
         }
         return empleadoRepository.save(empleado1);
     }
@@ -53,7 +53,7 @@ public class EmpleadoServiceImplements implements EmpleadoService{
     public void deleteEmpleado(Integer id) {
         Empleado empleado = empleadoRepository.findById(id).orElse(null);
         if (empleado == null) {
-            throw new IllegalArgumentException("Empleado no encontrado");
+            throw new ResourceNotFoundException("Empleado no encontrado");
         }
         empleadoRepository.deleteById(id);
     }

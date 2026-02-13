@@ -1,6 +1,7 @@
 package com.gabrielcalderon.RepuestosAutomotrices.service;
 
 import com.gabrielcalderon.RepuestosAutomotrices.entity.Proveedores;
+import com.gabrielcalderon.RepuestosAutomotrices.exception.ResourceNotFoundException;
 import com.gabrielcalderon.RepuestosAutomotrices.repository.ProveedoresRepository;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +29,7 @@ public class ProveedoresServiceImplements implements ProveedoresService{
     public Proveedores getProveedorById(Integer id) {
         Proveedores proveedor = proveedoresRepository.findById(id).orElse(null);
         if (proveedor == null){
-            throw new IllegalArgumentException("No se encontro el proveedor");
+            throw new ResourceNotFoundException("No se encontro el proveedor");
         }
         return proveedoresRepository.findById(id).orElse(null);
     }
@@ -44,7 +45,7 @@ public class ProveedoresServiceImplements implements ProveedoresService{
 
             return proveedoresRepository.save(proveedor1);
         } else {
-            throw new IllegalArgumentException("No se encontro el proveedor");
+            throw new ResourceNotFoundException("No se encontro el proveedor");
         }
     }
 
@@ -52,7 +53,7 @@ public class ProveedoresServiceImplements implements ProveedoresService{
     public void deleteProveedor(Integer id) {
         Proveedores proveedor = proveedoresRepository.findById(id).orElse(null);
         if (proveedor == null){
-            throw new IllegalArgumentException("No se encontro el proveedor");
+            throw new ResourceNotFoundException("No se encontro el proveedor");
         }
         proveedoresRepository.deleteById(id);
     }

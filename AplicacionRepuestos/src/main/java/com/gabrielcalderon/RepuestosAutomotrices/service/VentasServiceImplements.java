@@ -1,6 +1,7 @@
 package com.gabrielcalderon.RepuestosAutomotrices.service;
 
 import com.gabrielcalderon.RepuestosAutomotrices.entity.Venta;
+import com.gabrielcalderon.RepuestosAutomotrices.exception.ResourceNotFoundException;
 import com.gabrielcalderon.RepuestosAutomotrices.repository.VentasRepository;
 import org.springframework.stereotype.Service;
 
@@ -23,9 +24,9 @@ public class VentasServiceImplements implements VentaService{
     public Venta getVentaById(Integer id) {
         Venta venta = repository.findById(id).orElse(null);
         if (venta == null){
-            throw new IllegalArgumentException("No se encontro la venta");
+            throw new ResourceNotFoundException("No se encontro la venta");
         }
-        return venta;
+        return repository.findById(id).orElse(null);
     }
 
     @Override
@@ -37,7 +38,7 @@ public class VentasServiceImplements implements VentaService{
     public Venta updateVenta(Integer id, Venta venta) {
         Venta venta1 = repository.findById(id).orElse(null);
         if (venta1 == null){
-            throw new IllegalArgumentException("No se encontro la venta");
+            throw new ResourceNotFoundException("No se encontro la venta");
         } else {
             venta1.setFecha_venta(venta.getFecha_venta());
             venta1.setCantidad(venta.getCantidad());
@@ -52,7 +53,7 @@ public class VentasServiceImplements implements VentaService{
     public void deleteVenta(Integer id) {
         Venta venta = repository.findById(id).orElse(null);
         if (venta == null){
-            throw new IllegalArgumentException("No se encontro la venta");
+            throw new ResourceNotFoundException("No se encontro la venta");
         }
         repository.deleteById(id);
     }
