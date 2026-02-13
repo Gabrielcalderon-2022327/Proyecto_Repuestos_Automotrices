@@ -3,6 +3,7 @@ package com.gabrielcalderon.RepuestosAutomotrices.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 
 import java.time.LocalDate;
 
@@ -16,6 +17,7 @@ public class Venta {
 
     @Column(name = "fecha_venta")
     @NotNull(message = "La fecha de venta es un campo obligatorio")
+    @Past(message = "La fecha no puede ser futura")
     private LocalDate fecha_venta;
 
     @Column(name = "cantidad")
